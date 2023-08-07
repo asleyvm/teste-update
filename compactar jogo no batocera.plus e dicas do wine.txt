@@ -1,0 +1,26 @@
+dentro da pasta do jogo
+
+mksquashfs * 'Meu Jogo.plus'
+
+descompactar jogo: 
+unsquashfs 'Meu Jogo.plus'
+
+
+############### instalar dot net frameworks ###################
+winetricks dotnet48
+
+winetricks dlls list (ver todas as instalacoes)
+
+winetricks d3dx10 d3dx11_42 d3dx11_43 vcrun2012 vcrun2013
+winetricks dotnet35
+winetricks dxvk96
+
+
+
+Terminei a implementação para o Wine procurar pelo executável do jogo, ele vai procurar pelos arquivos nesta ordem
+batocera.plus (script que já era usado anteriormente.)
+batocera.plus.exe (executável do jogo .exe que foi renomeado para este nome)
+.plus.exe (executável do jogo com esta extensão, exemplo: my_game.plus.exe)
+.PLUS.EXE (executável do jogo com esta extensão, exemplo: my_game.PLUS.EXE)
+.exe (arquivos executáveis do windows, exemplo my_game.exe)
+.EXE (arquivos executáveis do windows, exemplo my_game.EXE)
