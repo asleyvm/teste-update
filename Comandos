@@ -1,0 +1,76 @@
+Comandos aplicativos básicos.
+
+Não esquecer de colocar comando SUDO no início.
+
+
+sudo apt-get install xubuntu-core^
+
+apt-get install digikam
+
+apt-get install unrar
+
+sudo mount /dev/sdf2 /mnt
+
+sudo blkid
+
+#####################################
+
+alterar permissões em varios arquivos ao mesmo tempo na RAIZ.
+ls -lha  (ver permissões)
+find -type f | xargs chmod 777
+
+#####################################
+
+'ldd' que permite verificar quais as bibliotecas o programa precisa para funcionar
+
+
+#####################################
+
+xjoypad -device /dev/input/js0
+você pode adicionar este comando no início do script do jogo
+ficaria algo assim
+
+#!/bin/sh
+xjoypad -device /dev/input/js0 &
+comandos que existiam no script do jogo
+killall xjoypad
+exit 0
+
+perceba q eu usei um & para mandar o programa para segundo plano
+e no final do script eu encerro o programa antes de sair do jogo para ele não ficar em execução quando o jogo terminar
+
+#####################################
+
+    para descompactar zip: unzip nomedoarquivo.zip
+    para descompactar 7z: 7zr x nomedoarquivo.7z
+
+    Para descompactar rar: unrar x nomedoarquivo.rar.
+    Para descompactar tar: tar -xvf nomedoarquivo.tar.
+    Para descompactar tar.gz: tar -vzxf nomedoarquivo.tar.gz.
+    Para descompactar bz2: bunzip nomedoarquivo.bz2.
+    Para descompactar tar.bz2: tar -jxvf nomedoarquivo.
+
+#####################################
+
+echo 'Compactando imagem final...'
+    7zr a -mx=9 "${TEMP_DIR}/Batocera.PLUS-${VERSION}-${RELEASE}.7z" "${TEMP_DIR}/Batocera.PLUS.img"
+
+#####################################
+
+
+montar uma imagem ISO crie uma pasta com qualquer nome
+
+mkdir x
+depois monte a imagem
+mount -t iso9660 'minha-image.iso' x
+se a imagem for um disco do windows 7 ou superior mude o formato para udf
+mount -t udf  'minha-image.iso' x
+os arquivos da imagem aparecem na pasta x
+depois que vc terminar de acessar a imagem você pode usar este comando para desmontar
+umount x
+
+######################################
+
+axel --insecure --num-connections=4 --alternate  "${URL}" --output "/userdata/downloads/nomearquivo"
+
+

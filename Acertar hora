@@ -1,0 +1,12 @@
+#################################################
+Habilitar o serviço
+
+mv /etc/init.d/K49ntp /etc/init.d/S49ntp 
+batocera-save-overlay 
+
+#################################################
+
+
+Alterar o arquivo: /userdata/system/batocera.conf
+
+Fuso horário: "America/Bahia"
